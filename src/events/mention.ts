@@ -31,8 +31,6 @@ export default async function mention(client: MegalodonInterface, { status }: En
     const response = await generate(formattedThread);
     if (response.message.content.length > 500) return;
 
-    console.log(response.message.content);
-
     client.postStatus(response.message.content, {
         in_reply_to_id: status.id,
         spoiler_text: "automated account, llm generated content, satire",
