@@ -29,6 +29,7 @@ export default async function mention(client: MegalodonInterface, { status }: En
     }
 
     const response = await generate(formattedThread);
+    if (response.message.content.length > 500) return;
 
     console.log(response.message.content);
 
