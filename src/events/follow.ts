@@ -11,7 +11,7 @@ export default async function follow(client: MegalodonInterface, notification: E
     const response = await generate([
         {
             role: "user",
-            content: `@${notification.account.acct}@${new URL(notification.account.url).hostname} just followed you on social media. Thank them or say hello.`,
+            content: `@${notification.account.acct}@${new URL(notification.account.url).hostname} followed you on Mastodon. Write a post thanking them for following.`,
         },
     ]);
 

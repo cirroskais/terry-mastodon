@@ -23,8 +23,8 @@ export default async function mention(client: MegalodonInterface, { status }: En
             role: post.account.acct === user.acct ? "assistant" : "user",
             content:
                 post.account.acct === user.acct
-                    ? formatContent(post.content) // @${new URL(post.account.url).hostname}
-                    : `@${post.account.acct} says: "${formatContent(post.content)}"`,
+                    ? formatContent(post.content)
+                    : `@${post.account.acct}@${new URL(post.account.url).hostname} says: "${formatContent(post.content)}"`,
         });
     }
 
